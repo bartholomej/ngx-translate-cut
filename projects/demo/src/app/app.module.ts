@@ -7,7 +7,7 @@ import { NgxTranslateCutModule } from 'projects/ngx-translate-cut/src/lib/ngx-tr
 import { AppComponent } from './app.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, 'assets/i18n/');
 }
 
 @NgModule({
