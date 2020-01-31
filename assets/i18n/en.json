@@ -9,6 +9,6 @@
   "name": "ngx-translate-cut",
   "subheading": {
     "app": "This is an example page for | ngx-translate-cut github library",
-    "translation": "Strings are separeted with | (pipe). Usually stored in en.json file"
+    "translation": "Strings are separated with | (pipe). Usually stored in en.json file"
   }
 }
