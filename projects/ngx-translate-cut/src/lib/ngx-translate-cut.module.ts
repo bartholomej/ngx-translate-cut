@@ -1,12 +1,8 @@
 import { NgModule } from '@angular/core';
-import { NgxTranslateCutComponent } from './ngx-translate-cut.component';
-
-
+import { NgxTranslateCutPipe } from './ngx-translate-cut.pipe';
 
 @NgModule({
-  declarations: [NgxTranslateCutComponent],
-  imports: [
-  ],
-  exports: [NgxTranslateCutComponent]
+  declarations: [NgxTranslateCutPipe],
+  exports: [NgxTranslateCutPipe]
 })
-export class NgxTranslateCutModule { }
+export class NgxTranslateCutModule {}

@@ -1,8 +1,14 @@
 {
-  "app": {
-    "demo": "This is | demo | translate",
-    "install": "Install",
-    "name": "ngx-translate-cut",
-    "resources": "Resources"
+  "demo": "This is only one translate string with | strong text | and some parts are | underlined",
+  "heading": {
+    "app": "ngx-translate-cut",
+    "example": "Example code",
+    "result": "Result",
+    "translation": "Definition"
+  },
+  "name": "ngx-translate-cut",
+  "subheading": {
+    "app": "This is an example page for | ngx-translate-cut github library",
+    "translation": "Strings are separeted with | (pipe). Usually stored in en.json file"
   }
 }
