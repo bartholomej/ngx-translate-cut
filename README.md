@@ -1,27 +1,83 @@
-# NgxTranslateCut
+# NgxTranslateCut Pipe
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24.
+> Angular pipe for cutting translations ([@ngx-translate](https://github.com/ngx-translate/core))
 
-## Development server
+> Angular 9, Ivy and SSR compatible
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Here's the [demo](http://bartholomej.github.io/ngx-scrolltop/).
 
-## Code scaffolding
+## Install
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Use yarn (or npm) to install the package
 
-## Build
+```terminal
+yarn add ngx-translate-cut
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+2. Add into your module `imports`
 
-## Running unit tests
+```typescript
+  import { NgxTranslateCutModule } from 'ngx-translate-cut';
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  @NgModule({
+   // ...
+   imports: [
+     // ...
+     NgxTranslateCutModule
+   ]
+  })
+```
 
-## Running end-to-end tests
+## Usage
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Definition
 
-## Further help
+Strings are separeted with `|` (pipe).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Usually stored in en.json file `assets/i18n/en.json`
+
+```json
+{
+  "demo": "This is only one translate string with | strong text | and some parts are | underlined"
+}
+```
+
+### Example code
+
+In your template `translateCut:0`
+
+```
+{{ 'demo' | translate | translateCut:0 }}
+
+<strong>
+  {{ 'demo' | translate | translateCut:1 }}
+</strong>
+
+{{ 'demo' | translate | translateCut:2 }}
+
+<u>
+  {{ 'demo' | translate | translateCut:3 }}
+</u>
+```
+
+### Result
+
+> This is only one translate string with <strong>strong</strong> text and some parts are <u>underlined</u>
+
+## Dependencies
+
+[@ngx-translate/core](https://github.com/ngx-translate/core)
+
+## License
+
+Copyright &copy; 2020 [Lukas Bartak](http://bartweb.cz)
+
+Proudly powered by nature 🗻, wind 💨, tea 🍵 and beer 🍺 ;)
+
+All contents are licensed under the [MIT license].
+
+[mit license]: LICENSE
+
+## Thanks to
+
+Original idea comes from: @yuristsepaniuk [in this thread](https://github.com/ngx-translate/core/issues/223).
