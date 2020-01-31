@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-translate-cut": [
+        "dist/ngx-translate-cut"
+      ],
+      "ngx-translate-cut/*": [
+        "dist/ngx-translate-cut/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
