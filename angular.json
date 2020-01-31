@@ -22,6 +22,13 @@
             "main": "projects/ngx-translate-cut/src/test.ts",
             "tsConfig": "projects/ngx-translate-cut/tsconfig.spec.json",
             "karmaConfig": "projects/ngx-translate-cut/karma.conf.js"
+          },
+          "configurations": {
+            "ci": {
+              "watch": false,
+              "progress": false,
+              "browsers": "ChromeHeadlessCI"
+            }
           }
         },
         "lint": {
@@ -155,6 +162,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "ngx-translate-cut"
 }
