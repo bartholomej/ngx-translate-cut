@@ -1,12 +1,18 @@
 # NgxTranslateCut Pipe
 
-> Angular pipe for cutting translations ([@ngx-translate](https://github.com/ngx-translate/core))
+[![npm version](https://badge.fury.io/js/ngx-translate-cut.svg)](https://badge.fury.io/js/ngx-translate-cut)
+[![Build status](https://github.com/bartholomej/ngx-translate-cut/workflows/Build%20&%20Publish/badge.svg)](https://github.com/bartholomej/ngx-translate-cut/actions)
+[![volkswagen status](https://auchenberg.github.io/volkswagen/volkswargen_ci.svg?v=1)](https://github.com/auchenberg/volkswagen)
 
-> Angular 9, Ivy and SSR compatible
+> Angular pipe for cutting translations ✂️ 🌍 (plugin for [@ngx-translate](https://github.com/ngx-translate/core))
 
-Here's the [demo](http://bartholomej.github.io/ngx-scrolltop/).
+> _Angular 9, Ivy and SSR compatible_
+
+Here's the [demo](http://bartholomej.github.io/ngx-translate-cut/).
 
 ## Install
+
+_Make sure you have installed [@ngx-translate](https://github.com/ngx-translate/core) library_
 
 1. Use yarn (or npm) to install the package
 
@@ -14,7 +20,7 @@ Here's the [demo](http://bartholomej.github.io/ngx-scrolltop/).
 yarn add ngx-translate-cut
 ```
 
-2. Add into your module `imports`
+2. Add NgxTranslateCutModule into your module `imports`
 
 ```typescript
   import { NgxTranslateCutModule } from 'ngx-translate-cut';
@@ -32,19 +38,19 @@ yarn add ngx-translate-cut
 
 ### Definition
 
-Strings are separeted with `|` (pipe).
+Strings are separated with `|` _(pipe sign)_.
 
-Usually stored in en.json file `assets/i18n/en.json`
+File `assets/i18n/en.json`
 
 ```json
 {
-  "demo": "This is only one translate string with | strong text | and some parts are | underlined"
+  "demo": "This is only one 'translate string' with | strong text | and some parts are | underlined"
 }
 ```
 
 ### Example code
 
-In your template `translateCut:0`
+In your template use `translateCut:<number>` pipe right after `translate` pipe from [@ngx-translate](https://github.com/ngx-translate/core) library.
 
 ```
 {{ 'demo' | translate | translateCut:0 }}
@@ -62,7 +68,7 @@ In your template `translateCut:0`
 
 ### Result
 
-> This is only one translate string with <strong>strong</strong> text and some parts are <u>underlined</u>
+> This is only one 'translate string' with <strong>strong</strong> text and some parts are <u>underlined</u>
 
 ## Dependencies
 
