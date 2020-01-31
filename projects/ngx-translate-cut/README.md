@@ -1,24 +1,89 @@
-# NgxTranslateCut
+# NgxTranslateCut Pipe
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
+[![npm version](https://badge.fury.io/js/ngx-translate-cut.svg)](https://badge.fury.io/js/ngx-translate-cut)
+[![Build status](https://github.com/bartholomej/ngx-translate-cut/workflows/Build%20&%20Publish/badge.svg)](https://github.com/bartholomej/ngx-translate-cut/actions)
+[![volkswagen status](https://auchenberg.github.io/volkswagen/volkswargen_ci.svg?v=1)](https://github.com/auchenberg/volkswagen)
 
-## Code scaffolding
+> Angular pipe for cutting translations ✂️ 🌍 (plugin for [@ngx-translate](https://github.com/ngx-translate/core))
 
-Run `ng generate component component-name --project ngx-translate-cut` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-translate-cut`.
-> Note: Don't forget to add `--project ngx-translate-cut` or else it will be added to the default project in your `angular.json` file. 
+> _Angular 9, Ivy and SSR compatible_
 
-## Build
+Here's the [demo](http://bartholomej.github.io/ngx-translate-cut/).
 
-Run `ng build ngx-translate-cut` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Install
 
-## Publishing
+_Make sure you have installed [@ngx-translate](https://github.com/ngx-translate/core) library_
 
-After building your library with `ng build ngx-translate-cut`, go to the dist folder `cd dist/ngx-translate-cut` and run `npm publish`.
+1. Use yarn (or npm) to install the package
 
-## Running unit tests
+```terminal
+yarn add ngx-translate-cut
+```
 
-Run `ng test ngx-translate-cut` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Add NgxTranslateCutModule into your module `imports`
 
-## Further help
+```typescript
+  import { NgxTranslateCutModule } from 'ngx-translate-cut';
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  @NgModule({
+   // ...
+   imports: [
+     // ...
+     NgxTranslateCutModule
+   ]
+  })
+```
+
+## Usage
+
+### Definition
+
+Strings are separated with `|` _(pipe sign)_.
+
+File `assets/i18n/en.json`
+
+```json
+{
+  "demo": "This is only one 'translate string' with | strong text | and some parts are | underlined"
+}
+```
+
+### Example code
+
+In your template use `translateCut:<number>` pipe right after `translate` pipe from [@ngx-translate](https://github.com/ngx-translate/core) library.
+
+```
+{{ 'demo' | translate | translateCut:0 }}
+
+<strong>
+  {{ 'demo' | translate | translateCut:1 }}
+</strong>
+
+{{ 'demo' | translate | translateCut:2 }}
+
+<u>
+  {{ 'demo' | translate | translateCut:3 }}
+</u>
+```
+
+### Result
+
+> This is only one 'translate string' with <strong>strong</strong> text and some parts are <u>underlined</u>
+
+## Dependencies
+
+[@ngx-translate/core](https://github.com/ngx-translate/core)
+
+## License
+
+Copyright &copy; 2020 [Lukas Bartak](http://bartweb.cz)
+
+Proudly powered by nature 🗻, wind 💨, tea 🍵 and beer 🍺 ;)
+
+All contents are licensed under the [MIT license].
+
+[mit license]: LICENSE
+
+## Thanks to
+
+Original idea comes from: @yuristsepaniuk [in this thread](https://github.com/ngx-translate/core/issues/223).
