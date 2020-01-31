@@ -1,8 +1,36 @@
 {
   "name": "ngx-translate-cut",
   "version": "0.0.1",
+  "description": "",
+  "author": "Lukas Bartak <bart@bartweb.cz> (https://github.com/bartholomej)",
   "peerDependencies": {
-    "@angular/common": "^8.2.14",
-    "@angular/core": "^8.2.14"
+    "@angular/common": ">=6 <10",
+    "@angular/core": ">=6 <10",
+    "@ngx-translate/core": ">=10 <12"
+  },
+  "homepage": "https://github.com/bartholomej/ngx-translate-cut",
+  "license": "MIT",
+  "repository": {
+    "url": "git+https://github.com/bartholomej/ngx-translate-cut.git",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/bartholomej/ngx-translate-cut/issues"
+  },
+  "keywords": [
+    "angular",
+    "ngx",
+    "translation",
+    "i18n",
+    "ngx-translate"
+  ],
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   }
 }

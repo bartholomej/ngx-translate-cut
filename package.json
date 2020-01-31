@@ -1,17 +1,30 @@
 {
   "name": "ngx-translate-cut",
   "version": "0.0.0",
+  "description": "",
+  "author": "Lukas Bartak <bart@bartweb.cz> (https://github.com/bartholomej)",
   "scripts": {
     "ng": "ng",
     "start:demo": "ng serve",
     "start": "ng build ngx-translate-cut --watch",
-    "build": "ng build",
+    "build": "ng build ngx-translate-cut",
+    "build:demo": "ng build demo --prod",
+    "deploy:ghpages": "yarn build && yarn build:demo && ngh --dir=dist/demo",
+    "publish:npmjs": "npm run syncprojects && npm run build && npm publish --folder dist/ngx-translate-cut",
+    "gpr:setup": "node scripts/gpr",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "translations:extract": "ngx-translate-extract --input ./projects/demo/src --output ./projects/demo/src/assets/i18n/en.json --clean --sort --format namespaced-json --marker _ --format-indentation '  '"
+    "translations:extract": "ngx-translate-extract --input ./projects/demo/src --output ./projects/demo/src/assets/i18n/en.json --clean --sort --format namespaced-json --marker _ --format-indentation '  '",
+    "create:version": "node scripts/version.js",
+    "postinstall": "yarn create:version",
+    "syncprojects": "cp README.md projects/ngx-translate-cut/README.md && node scripts/sync-version.js",
+    "version": "npm run syncprojects && git add ./projects/ngx-translate-cut/",
+    "postversion": "git push && git push --follow-tags",
+    "release:patch": "git checkout master && npm version patch -m \"chore(update): patch release %s 🐛 \"",
+    "release:minor": "git checkout master && npm version minor -m \"chore(update): release %s 🚀\"",
+    "release:major": "git checkout master && npm version major -m \"chore(update): major release %s 💥 \""
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.14",
     "@angular/common": "~8.2.14",
@@ -60,5 +73,30 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
+  },
+  "homepage": "https://github.com/bartholomej/ngx-translate-cut",
+  "license": "MIT",
+  "repository": {
+    "url": "git+https://github.com/bartholomej/ngx-translate-cut.git",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/bartholomej/ngx-translate-cut/issues"
+  },
+  "keywords": [
+    "angular",
+    "ngx",
+    "translation",
+    "i18n",
+    "ngx-translate"
+  ],
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   }
 }
