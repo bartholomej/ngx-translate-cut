@@ -1,0 +1,8 @@
+{
+  "app": {
+    "demo": "This is | demo | translate",
+    "install": "Install",
+    "name": "ngx-translate-cut",
+    "resources": "Resources"
+  }
+}
