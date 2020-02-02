@@ -48,6 +48,10 @@ p {
   opacity: 0.8;
 }
 
+.github-logo {
+  padding-right: 1rem;
+}
+
 .content {
   display: flex;
   margin: 32px auto;

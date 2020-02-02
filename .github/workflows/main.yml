@@ -29,8 +29,8 @@ jobs:
       - name: Build demo app # Build Schematics and move
         run: yarn build:demo --base-href https://bartholomej.github.io/ngx-translate-cut/
 
-      # - name: Run tests # Build Schematics and move
-      #   run: yarn test --configuration=ci
+      - name: Run tests
+        run: yarn test --configuration=ci
 
       - name: Publish NPM
         run: npm publish --folder dist/ngx-translate-cut
