@@ -52,7 +52,7 @@
   <div class="terminal">
     <pre>
     {{ '{' }}
-      "demo": "This is only one translate string with | strong text | and some parts are | underlined"
+      "demo": "This is only one 'translate string' with | strong text | and some | links"
     {{ '}' }}
     </pre>
   </div>
@@ -68,9 +68,9 @@
 
     {{ 'demo' | translate | <strong>translateCut:2</strong> }}
 
-    &lt;u&gt;
+    &lt;a href="#"&gt;
       {{ 'demo' | translate | <strong>translateCut:3</strong> }}
-    &lt;/u&gt;
+    &lt;/a&gt;
     </pre>
   </div>
   <h2>{{ 'heading.result' | translate }}</h2>
@@ -78,7 +78,9 @@
     {{ 'demo' | translate | translateCut:0 }}
     <strong>{{ 'demo' | translate | translateCut:1 }}</strong>
     {{ 'demo' | translate | translateCut:2 }}
-    <u>{{ 'demo' | translate | translateCut:3 }}</u>
+    <a href="https://github.com/bartholomej/ngx-translate-cut/">
+      {{ 'demo' | translate | translateCut:3 }}
+    </a>
   </p>
 
   <!-- Footer -->
