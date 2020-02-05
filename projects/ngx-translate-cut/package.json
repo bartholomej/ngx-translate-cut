@@ -24,9 +24,6 @@
     "i18n",
     "ngx-translate"
   ],
-  "files": [
-    "dist"
-  ],
   "engines": {
     "node": ">=10"
   },
