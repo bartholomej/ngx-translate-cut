@@ -44,7 +44,7 @@ File `assets/i18n/en.json`
 
 ```json
 {
-  "demo": "This is only one 'translate string' with | strong text | and some parts are | underlined"
+  "demo": "This is only one 'translate string' with | strong text | and | links"
 }
 ```
 
@@ -52,7 +52,7 @@ File `assets/i18n/en.json`
 
 In your template use `translateCut:<number>` pipe right after `translate` pipe from [@ngx-translate](https://github.com/ngx-translate/core) library.
 
-```
+```html
 {{ 'demo' | translate | translateCut:0 }}
 
 <strong>
@@ -61,14 +61,14 @@ In your template use `translateCut:<number>` pipe right after `translate` pipe f
 
 {{ 'demo' | translate | translateCut:2 }}
 
-<u>
+<a href="#">
   {{ 'demo' | translate | translateCut:3 }}
-</u>
+</a>
 ```
 
 ### Result
 
-> This is only one 'translate string' with <strong>strong</strong> text and some parts are <u>underlined</u>
+> This is only one 'translate string' with <strong>strong</strong> text and [links](https://github.com/bartholomej/ngx-translate-cut/)
 
 ## Dependencies
 
