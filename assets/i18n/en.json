@@ -1,5 +1,5 @@
 {
-  "demo": "This is only one translate string with | strong text | and some parts are | underlined",
+  "demo": "This is only one 'translate string' with | strong text | and some | links",
   "heading": {
     "app": "ngx-translate-cut",
     "example": "Example code",
