@@ -1,0 +1,33 @@
+name: Test feature branch
+
+on:
+  push:
+    branches:
+      - feat/*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@master
+        with:
+          node-version: 12.x
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies # Install all deps
+        run: yarn
+
+      - name: Sync versions # Sync versions
+        run: yarn syncprojects
+
+      - name: Build ngx-translate-cut # Build
+        run: yarn build
+
+      - name: Build demo app # Build Schematics and move
+        run: yarn build:demo --base-href https://bartholomej.github.io/ngx-translate-cut/
+
+      - name: Run tests
+        run: yarn test --configuration=ci
