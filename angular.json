@@ -14,6 +14,11 @@
           "options": {
             "tsConfig": "projects/ngx-translate-cut/tsconfig.lib.json",
             "project": "projects/ngx-translate-cut/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-translate-cut/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -60,7 +65,7 @@
             "main": "projects/demo/src/main.ts",
             "polyfills": "projects/demo/src/polyfills.ts",
             "tsConfig": "projects/demo/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "projects/demo/src/favicon.ico",
               "projects/demo/src/assets"
@@ -83,7 +88,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -175,5 +179,8 @@
       }
     }
   },
-  "defaultProject": "ngx-translate-cut"
+  "defaultProject": "ngx-translate-cut",
+  "cli": {
+    "analytics": true
+  }
 }
