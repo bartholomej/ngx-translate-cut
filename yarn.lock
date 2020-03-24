@@ -901,10 +901,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@biesbjerg/ngx-translate-extract@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@biesbjerg/ngx-translate-extract/-/ngx-translate-extract-5.0.0.tgz#2d7b948a90b961ee2396409c5ef22bac228cb0f8"
-  integrity sha512-7wYX1P30OTKOZH5lGeAbYTV2jpa93trioykuFsF0o9C4SYxV/PlA0ZUT3kaVsMTOm9BG6ALvBg5x9T8oxISlSQ==
+"@biesbjerg/ngx-translate-extract@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@biesbjerg/ngx-translate-extract/-/ngx-translate-extract-6.0.0.tgz#6d7fbcc549c61ce77ff1537d713ddc8a4d8d613d"
+  integrity sha512-dXfGVdWAwo29wyO81w966MuOGq83N65PAHRz2HFDVaDIuYn5fyfnylXg0wwg7qKvW7kUVuyj0H3vgf2lJj0tYQ==
   dependencies:
     "@angular/compiler" "^9.0.7"
     "@phenomnomnominal/tsquery" "^4.0.0"
@@ -7130,10 +7130,10 @@ prepend-http@^2.0.0:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
   integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
 
-prettier@^1.19.1:
-  version "1.19.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.19.1.tgz#f7d7f5ff8a9cd872a7be4ca142095956a60797cb"
-  integrity sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
+prettier@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.0.2.tgz#1ba8f3eb92231e769b7fcd7cb73ae1b6b74ade08"
+  integrity sha512-5xJQIPT8BraI7ZnaDwSbu5zLrB6vvi8hVV58yHQ+QK64qrY40dULy0HSRlQ2/2IdzeBpjhDkqdcFBnFeDEMVdg==
 
 pretty-quick@^2.0.1:
   version "2.0.1"
