@@ -1,19 +1,13 @@
-// const { gitDescribeSync } = require('git-describe');
-const { version } = require('../package.json');
-const { resolve, relative } = require('path');
-const { writeFileSync } = require('fs-extra');
+import { writeFileSync } from 'fs-extra';
+import { relative, resolve } from 'path';
+import { version } from '../package.json';
 
-// const gitInfo = gitDescribeSync({
-//     dirtyMark: false,
-//     dirtySemver: false
-// });
-
-let commit_hash = process.argv[2] || '';
-let tag = process.argv[3] || version;
+const COMMIT_HASH = process.argv[2] || '';
+const TAG = process.argv[3] || version;
 
 const VERSION = {
-  TAG: tag,
-  COMMIT_HASH: commit_hash
+  TAG,
+  COMMIT_HASH,
 };
 
 const file = resolve(__dirname, '..', 'projects', 'demo', 'src', 'environments', 'version.ts');
