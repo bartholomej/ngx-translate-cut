@@ -1,7 +1,7 @@
 # NgxTranslateCut Pipe
 
 [![npm version](https://badge.fury.io/js/ngx-translate-cut.svg)](https://badge.fury.io/js/ngx-translate-cut)
-[![Build status](https://github.com/bartholomej/ngx-translate-cut/workflows/Build%20&%20Publish/badge.svg)](https://github.com/bartholomej/ngx-translate-cut/actions)
+[![Build & Publish](https://github.com/bartholomej/ngx-translate-cut/workflows/Build%20&%20Publish/badge.svg?branch=master)](https://github.com/bartholomej/ngx-translate-cut/actions)
 [![volkswagen status](https://auchenberg.github.io/volkswagen/volkswargen_ci.svg?v=1)](https://github.com/auchenberg/volkswagen)
 
 > Angular pipe for cutting translations ✂️ 🌍 (plugin for [@ngx-translate](https://github.com/ngx-translate/core))
@@ -84,6 +84,10 @@ All contents are licensed under the [MIT license].
 
 [mit license]: LICENSE
 
+## Donation
+
+If this project have helped you save time please consider [making a donation](https://github.com/sponsors/bartholomej) for some 🍺 or 🍵 ;)
+
 ## Thanks to
 
-Original idea comes from: @yuristsepaniuk [in this thread](https://github.com/ngx-translate/core/issues/223).
+Original idea comes from: [@yuristsepaniuk](https://github.com/yuristsepaniuk) in [this thread](https://github.com/ngx-translate/core/issues/223).
