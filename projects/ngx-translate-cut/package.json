@@ -29,5 +29,9 @@
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/bartholomej"
   }
 }
