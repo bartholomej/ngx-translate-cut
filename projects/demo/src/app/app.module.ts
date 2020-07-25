@@ -19,13 +19,18 @@ export function HttpLoaderFactory(http: HttpClient) {
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
+        deps: [HttpClient],
+      },
     }),
-    NgxTranslateCutModule
+    NgxTranslateCutModule.forRoot({
+      // Pipe `|` is default option. It's just for show and play :)
+      // If you don't need to change the separator, you don't have to use it at all.
+      // Just import module. Without any `forRoot` methods.
+      separator: '|',
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {
   constructor(private translate: TranslateService) {
