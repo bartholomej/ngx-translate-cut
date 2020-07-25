@@ -1,6 +1,6 @@
 {
   "name": "ngx-translate-cut",
-  "version": "1.5.0",
+  "version": "1.6.0-rc.1",
   "description": "Angular pipe for cutting translations (plugin for ngx-translate)",
   "author": "Lukas Bartak <bart@bartweb.cz> (https://github.com/bartholomej)",
   "scripts": {
@@ -11,6 +11,7 @@
     "build:demo": "ng build demo --prod",
     "deploy:ghpages": "yarn build && yarn build:demo && ngh --dir=dist/demo",
     "publish:npmjs": "npm run syncprojects && npm run build && npm publish --folder dist/ngx-translate-cut",
+    "publish:next": "yarn && yarn syncprojects && yarn build && yarn test --configuration=ci && npm publish --folder dist/ngx-translate-cut --tag next",
     "gpr:setup": "yarn ts-node --project scripts/tsconfig.ts-node.json scripts/gpr-setup",
     "test": "ng test",
     "coverage": "yarn test --code-coverage",
