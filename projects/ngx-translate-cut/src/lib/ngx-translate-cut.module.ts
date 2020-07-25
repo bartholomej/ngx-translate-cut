@@ -11,6 +11,7 @@ export let FOR_ROOT_OPTIONS_TOKEN = new InjectionToken<NgxTranslateCutOptions>(
 @NgModule({
   declarations: [NgxTranslateCutPipe],
   exports: [NgxTranslateCutPipe],
+  providers: [NgxTranslateCutOptionsService],
 })
 export class NgxTranslateCutModule {
   public static forRoot(

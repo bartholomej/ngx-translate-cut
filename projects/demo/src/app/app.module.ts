@@ -29,7 +29,6 @@ export function HttpLoaderFactory(http: HttpClient) {
       separator: '|',
     }),
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {

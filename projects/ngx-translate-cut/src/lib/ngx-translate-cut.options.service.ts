@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { SEPARATOR } from './ngx-translate-cut.constants';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class NgxTranslateCutOptionsService {
   /**
    * @returns separator – can be custom or predefined
