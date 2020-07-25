@@ -6,7 +6,7 @@
 
 > Angular pipe for cutting translations ✂️ 🌍 (plugin for [@ngx-translate](https://github.com/ngx-translate/core))
 
-> ✓ _Angular 10, Ivy and SSR compatible_
+> ✓ _Angular 10, Ivy and Angular Universal (SSR) compatible_
 
 Here's the [demo](http://bartholomej.github.io/ngx-translate-cut/) or [stackblitz live preview](https://stackblitz.com/edit/ngx-translate-cut)
 
@@ -38,7 +38,8 @@ yarn add ngx-translate-cut
 
 ### Definition
 
-Strings are separated with `|` _(pipe sign)_.
+Strings are separated with `|` _(pipe sign)_
+_[...but you can choose your own symbol](#options)_
 
 File `assets/i18n/en.json`
 
@@ -69,6 +70,25 @@ In your template use `translateCut:<number>` pipe right after `translate` pipe f
 ### Result
 
 > This is only one 'translate string' with <strong>strong</strong> text and [links](https://github.com/bartholomej/ngx-translate-cut/)
+
+## Options
+
+If you are not satisfied with the basic settings of the separator (which is `|`), you can choose your own separator
+
+```typescript
+  import { NgxTranslateCutModule } from 'ngx-translate-cut';
+
+  @NgModule({
+   // ...
+   imports: [
+     // ...
+     NgxTranslateCutModule.forRoot({
+      // Your separator in translation strings will be `*`
+      separator: '*'
+    }),
+   ]
+  })
+```
 
 ## Dependencies
 
