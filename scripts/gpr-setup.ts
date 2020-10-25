@@ -6,7 +6,8 @@ import distPackage from '../dist/ngx-translate-cut/package.json';
 const pkg: Record<string, any> = distPackage;
 
 pkg.publishConfig = {};
-pkg.publishConfig.registry = `https://npm.pkg.github.com/@bartholomej`;
+pkg.name = '@bartholomej/ngx-translate-cut';
+pkg.publishConfig.registry = 'https://npm.pkg.github.com';
 
 writeFileSync(
   join(__dirname, '..', 'dist', 'ngx-translate-cut', 'package.json'),
