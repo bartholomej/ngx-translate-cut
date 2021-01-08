@@ -1,0 +1,29 @@
+name: Build & run all tests
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
+      - name: Use Node.js 14
+        uses: actions/setup-node@master
+        with:
+          node-version: 14
+
+      - name: Install dependencies # Install all deps
+        run: yarn
+
+      - name: Sync versions # Sync versions
+        run: yarn syncprojects
+
+      - name: Build ngx-scrolltop # Build
+        run: yarn build --prod
+
+      - name: Build Example # Build Example page
+        run: yarn build:demo --base-href https://bartholomej.github.io/ngx-translate-cut/
+
+      - name: Run tests # Build Schematics and move
+        run: yarn test --configuration=ci
