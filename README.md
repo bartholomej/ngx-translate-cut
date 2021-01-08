@@ -90,6 +90,21 @@ If you are not satisfied with the basic settings of the separator (which is `|`)
 
 [@ngx-translate/core](https://github.com/ngx-translate/core)
 
+## Development (notes for me)
+
+### Publish Stable
+
+```shell
+yarn release:patch
+# yarn release:minor
+# yarn release:major
+```
+
+### Publish next channel
+
+1. Bump version `-beta.0` in `package.json`
+2. `yarn publish:next`
+
 ## License
 
 Copyright &copy; 2021 [Lukas Bartak](http://bartweb.cz)

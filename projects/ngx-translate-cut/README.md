@@ -6,7 +6,7 @@
 
 > Angular pipe for cutting translations ✂️ 🌍 (plugin for [@ngx-translate](https://github.com/ngx-translate/core))
 
-> ✓ _Angular 10, Ivy and Angular Universal (SSR) compatible_
+> ✓ _Angular 11, Ivy and Angular Universal (SSR) compatible_
 
 Here's the [demo](http://bartholomej.github.io/ngx-translate-cut/) or [stackblitz live preview](https://stackblitz.com/edit/ngx-translate-cut)
 
@@ -56,15 +56,11 @@ In your template use `translateCut:<number>` pipe right after `translate` pipe f
 ```html
 {{ 'demo' | translate | translateCut:0 }}
 
-<strong>
-  {{ 'demo' | translate | translateCut:1 }}
-</strong>
+<strong> {{ 'demo' | translate | translateCut:1 }} </strong>
 
 {{ 'demo' | translate | translateCut:2 }}
 
-<a href="#">
-  {{ 'demo' | translate | translateCut:3 }}
-</a>
+<a href="#"> {{ 'demo' | translate | translateCut:3 }} </a>
 ```
 
 ### Result
@@ -94,9 +90,24 @@ If you are not satisfied with the basic settings of the separator (which is `|`)
 
 [@ngx-translate/core](https://github.com/ngx-translate/core)
 
+## Development (notes for me)
+
+### Publish Stable
+
+```shell
+yarn release:patch
+# yarn release:minor
+# yarn release:major
+```
+
+### Publish next channel
+
+1. Bump version `-beta.0` in `package.json`
+2. `yarn publish:next`
+
 ## License
 
-Copyright &copy; 2020 [Lukas Bartak](http://bartweb.cz)
+Copyright &copy; 2021 [Lukas Bartak](http://bartweb.cz)
 
 Proudly powered by nature 🗻, wind 💨, tea 🍵 and beer 🍺 ;)
 
