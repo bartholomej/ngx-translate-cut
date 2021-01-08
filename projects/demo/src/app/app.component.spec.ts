@@ -1,4 +1,4 @@
-import { async, TestBed } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgxTranslateCutOptionsService } from 'projects/ngx-translate-cut/src/lib/ngx-translate-cut.options.service';
 import { NgxTranslateCutModule } from 'projects/ngx-translate-cut/src/public-api';
@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       providers: [NgxTranslateCutOptionsService],
       imports: [TranslateModule.forRoot(), NgxTranslateCutModule],
@@ -22,7 +22,7 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should get github link`, async(() => {
+  it(`should get github link`, waitForAsync(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
