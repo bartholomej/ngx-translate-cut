@@ -1,8 +1,10 @@
 # NgxTranslateCut Pipe
 
 [![npm version](https://badge.fury.io/js/ngx-translate-cut.svg)](https://badge.fury.io/js/ngx-translate-cut)
+[![Package License](https://img.shields.io/npm/l/ngx-translate-cut.svg)](https://www.npmjs.com/ngx-translate-cut)
 [![Build & Publish](https://github.com/bartholomej/ngx-translate-cut/workflows/Build%20&%20Publish/badge.svg?branch=master)](https://github.com/bartholomej/ngx-translate-cut/actions)
-[![volkswagen status](https://auchenberg.github.io/volkswagen/volkswargen_ci.svg?v=1)](https://github.com/auchenberg/volkswagen)
+[![NPM Downloads](https://img.shields.io/npm/dm/ngx-translate-cut.svg)](https://www.npmjs.com/ngx-translate-cut)
+[![codecov](https://codecov.io/gh/bartholomej/ngx-translate-cut/branch/master/graph/badge.svg?token=FV0ZM2Y3L3)](https://codecov.io/gh/bartholomej/ngx-translate-cut)
 
 > Angular pipe for cutting translations ✂️ 🌍 (plugin for [@ngx-translate](https://github.com/ngx-translate/core))
 
