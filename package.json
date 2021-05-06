@@ -7,8 +7,8 @@
     "ng": "ng",
     "start:demo": "ng serve",
     "start": "ng build ngx-translate-cut --watch",
-    "build": "ng build ngx-translate-cut --prod",
-    "build:demo": "ng build demo --prod",
+    "build": "ng build ngx-translate-cut --configuration production",
+    "build:demo": "ng build demo --configuration production",
     "deploy:ghpages": "yarn build && yarn build:demo && ngh --dir=dist/demo",
     "publish:npmjs": "npm run syncprojects && npm run build && npm publish --folder dist/ngx-translate-cut",
     "publish:next": "yarn && yarn syncprojects && yarn build && yarn test --configuration=ci && npm publish --folder dist/ngx-translate-cut --tag next",
@@ -26,6 +26,7 @@
     "release:patch": "git checkout master && npm version patch -m \"chore(update): patch release %s 🐛 \"",
     "release:minor": "git checkout master && npm version minor -m \"chore(update): release %s 🚀\"",
     "release:major": "git checkout master && npm version major -m \"chore(update): major release %s 💥 \"",
+    "publish:ng12": "yarn && yarn syncprojects && yarn build && yarn test --configuration=ci && cd dist/ngx-translate-cut && sed -i '' '/prepublishOnly/d' package.json && npm publish --ignore-scripts --tag ng12",   
     "prepare": "husky install"
   },
   "dependencies": {
