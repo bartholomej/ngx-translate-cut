@@ -1,6 +1,6 @@
 {
   "name": "ngx-translate-cut",
-  "version": "1.7.3",
+  "version": "2.0.0-beta.0",
   "description": "Angular pipe for cutting translations (plugin for ngx-translate)",
   "author": "Lukas Bartak <bart@bartweb.cz> (https://github.com/bartholomej)",
   "scripts": {
@@ -26,7 +26,7 @@
     "release:patch": "git checkout master && npm version patch -m \"chore(update): patch release %s 🐛 \"",
     "release:minor": "git checkout master && npm version minor -m \"chore(update): release %s 🚀\"",
     "release:major": "git checkout master && npm version major -m \"chore(update): major release %s 💥 \"",
-    "publish:ng12": "yarn && yarn syncprojects && yarn build && yarn test --configuration=ci && cd dist/ngx-translate-cut && sed -i '' '/prepublishOnly/d' package.json && npm publish --ignore-scripts --tag ng12",   
+    "publish:ng12": "yarn && yarn syncprojects && yarn build && yarn test --configuration=ci && cd dist/ngx-translate-cut && sed -i '' '/prepublishOnly/d' package.json && npm publish --ignore-scripts --tag ng12",
     "prepare": "husky install"
   },
   "dependencies": {
