@@ -8,7 +8,7 @@
 
 > Angular pipe for cutting translations ✂️ 🌍 (plugin for [@ngx-translate](https://github.com/ngx-translate/core))
 
-> ✓ _Angular 11, Ivy and Angular Universal (SSR) compatible_
+> ✓ _Angular 12, Ivy and Angular Universal (SSR) compatible_
 
 Here's the [demo](http://bartholomej.github.io/ngx-translate-cut/) or [stackblitz live preview](https://stackblitz.com/edit/ngx-translate-cut)
 
@@ -96,11 +96,14 @@ If you are not satisfied with the basic settings of the separator (which is `|`)
 
 ### Angular 12 + IVY (Goodbye ngcc)
 
-If you're brave enough, you can play with the experimental version, which is only compiled with IVY and fully supports Angular12 (actually Angular 11.1.x+)
+If you're brave enough, you can play with the experimental version, which is only compiled with IVY and fully supports Angular12+ (you can't use this with older Angular version anymore)
 
 ```bash
 yarn add ngx-translate-cut@ng12
+# npm install ngx-translate-cut@ng12 --save
 ```
+
+Branch: [ng12](https://github.com/bartholomej/ngx-translate-cut/tree/ng12)
 
 ## Development (notes for me)
 
