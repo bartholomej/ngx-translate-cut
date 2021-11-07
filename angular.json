@@ -163,12 +163,22 @@
               "protractorConfig": "e2e/protractor-ci.conf.js"
             }
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/demo/**/*.ts",
+              "projects/demo/**/*.html"
+            ]
+          }
         }
       }
     }
   },
   "defaultProject": "ngx-translate-cut",
   "cli": {
-    "analytics": true
+    "analytics": true,
+    "defaultCollection": "@angular-eslint/schematics"
   }
 }
