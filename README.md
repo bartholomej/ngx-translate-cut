@@ -19,10 +19,10 @@ Here's the [demo](http://bartholomej.github.io/ngx-translate-cut/) or [stackblit
 2. Use yarn (or npm) to install the package
 
 ```bash
-yarn add ngx-translate-cut # Angular 12+
+yarn add ngx-translate-cut # For Angular 12+
 ```
 
-_Note: if you are using Angular 5 – 11, use comaptibility version: `yarn add ngx-translate-cut@compat`_
+_Note: if you are using **Angular 5 – 11**, use compatibility version: `yarn add ngx-translate-cut@compat`_
 
 3. Add NgxTranslateCutModule into your module `imports`
 
@@ -93,6 +93,27 @@ If you are not satisfied with the basic settings of the separator (which is `|`)
 ## Dependencies
 
 [@ngx-translate/core](https://github.com/ngx-translate/core)
+
+## FAQ
+
+### Older Angular
+
+#### Error
+
+> Failed to compile.
+>
+> ./node_modules/ngx-translate-cut/fesm2015/ngx-translate-cut.mjs 17:18-28
+> Can't import the named export 'Injectable' from non EcmaScript module (only default export is available)
+
+#### Solution
+
+You are probably trying to use this library with an older version of Angular version (Angular 5 – 11).
+
+Install copmatibility version instead:
+
+```bash
+yarn add ngx-translate-cut@compat # for angular 5 – 11
+```
 
 ## Development (notes for me)
 
