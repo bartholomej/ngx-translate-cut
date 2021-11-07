@@ -35,6 +35,15 @@
               "browsers": "ChromeHeadlessCI"
             }
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/ngx-translate-cut/**/*.ts",
+              "projects/ngx-translate-cut/**/*.html"
+            ]
+          }
         }
       }
     },
