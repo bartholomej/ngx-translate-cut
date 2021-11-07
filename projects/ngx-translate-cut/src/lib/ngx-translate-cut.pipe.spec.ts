@@ -1,4 +1,4 @@
-/* tslint:disable:no-unused-variable */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { TestBed } from '@angular/core/testing';
 import { NgxTranslateCutOptionsService } from './ngx-translate-cut.options.service';
 import { NgxTranslateCutPipe } from './ngx-translate-cut.pipe';
