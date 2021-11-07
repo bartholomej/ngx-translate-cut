@@ -8,21 +8,23 @@
 
 > Angular pipe for cutting translations ✂️ 🌍 (plugin for [@ngx-translate](https://github.com/ngx-translate/core))
 
-> ✓ _Angular 12, Ivy and Angular Universal (SSR) compatible_
+> ✓ _Angular 13, Ivy and Angular Universal (SSR) compatible_
 
 Here's the [demo](http://bartholomej.github.io/ngx-translate-cut/) or [stackblitz live preview](https://stackblitz.com/edit/ngx-translate-cut)
 
 ## Install
 
-_Make sure you have installed [@ngx-translate](https://github.com/ngx-translate/core) library_
+1. Make sure you have [@ngx-translate](https://github.com/ngx-translate/core) library installed, because this is its plugin
 
-1. Use yarn (or npm) to install the package
+2. Use yarn (or npm) to install the package
 
-```terminal
-yarn add ngx-translate-cut
+```bash
+yarn add ngx-translate-cut # For Angular 12+
 ```
 
-2. Add NgxTranslateCutModule into your module `imports`
+_Note: if you are using **Angular 5 – 11**, use compatibility version: `yarn add ngx-translate-cut@compat`_
+
+3. Add NgxTranslateCutModule into your module `imports`
 
 ```typescript
   import { NgxTranslateCutModule } from 'ngx-translate-cut';
@@ -92,18 +94,26 @@ If you are not satisfied with the basic settings of the separator (which is `|`)
 
 [@ngx-translate/core](https://github.com/ngx-translate/core)
 
-## 🧪 Experiments
+## FAQ
 
-### Angular 12 + IVY (Goodbye ngcc)
+### Older Angular
 
-If you're brave enough, you can play with the experimental version, which is only compiled with IVY and fully supports Angular12+ (you can't use this with older Angular version anymore)
+#### Error
+
+> Failed to compile.
+>
+> ./node_modules/ngx-translate-cut/fesm2015/ngx-translate-cut.mjs 17:18-28
+> Can't import the named export 'Injectable' from non EcmaScript module (only default export is available)
+
+#### Solution
+
+You are probably trying to use this library with an older version of Angular version (Angular 5 – 11).
+
+Install copmatibility version instead:
 
 ```bash
-yarn add ngx-translate-cut@ng12
-# npm install ngx-translate-cut@ng12 --save
+yarn add ngx-translate-cut@compat # for angular 5 – 11
 ```
-
-Branch: [ng12](https://github.com/bartholomej/ngx-translate-cut/tree/ng12)
 
 ## Development (notes for me)
 
