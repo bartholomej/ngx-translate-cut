@@ -45,6 +45,8 @@ jobs:
         run: yarn test --configuration=ci
 
       - name: Publish NPM
-        run: npm publish --folder dist/ngx-translate-cut --tag compat
+        run: |
+          cd dist/ngx-translate-cut
+          npm publish --tag compat
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
