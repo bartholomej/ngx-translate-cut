@@ -19,15 +19,16 @@ Here's the [demo](http://bartholomej.github.io/ngx-translate-cut/) or [stackblit
 2. Use yarn (or npm) to install the package
 
 ```bash
-npm install ngx-translate-cut # For Angular 12+. See compatibility table.
+npm install ngx-translate-cut # For Angular 13. See compatibility table.
 ```
 
 Choose the version corresponding to your Angular version:
 
-| Angular          | ngx-translate-cut | Install                           |
-| ---------------- | ----------------- | --------------------------------- |
-| >= 12 (ivy only) | 2.x               | `npm install ngx-translate-cut`   |
-| >= 5 < 12        | 1.x               | `npm install ngx-translate-cut@1` |
+| Angular           | ngx-translate-cut | Install                           |
+| ----------------- | ----------------- | --------------------------------- |
+| **13** (ivy only) | 3.x               | `npm install ngx-translate-cut`   |
+| **12** (ivy only) | 2.x               | `npm install ngx-translate-cut@2` |
+| >= 5 < 13         | 1.x               | `npm install ngx-translate-cut@1` |
 
 3. Add `NgxTranslateCutModule` into your module `imports` (usually `app.module.ts` file)
 
