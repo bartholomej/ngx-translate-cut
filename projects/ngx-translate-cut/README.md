@@ -1,4 +1,4 @@
-# NgxTranslateCut Pipe
+# ✂️🌍 NgxTranslateCut Pipe
 
 [![npm version](https://badge.fury.io/js/ngx-translate-cut.svg)](https://badge.fury.io/js/ngx-translate-cut)
 [![Package License](https://img.shields.io/npm/l/ngx-translate-cut.svg)](https://www.npmjs.com/ngx-translate-cut)
@@ -19,12 +19,18 @@ Here's the [demo](http://bartholomej.github.io/ngx-translate-cut/) or [stackblit
 2. Use yarn (or npm) to install the package
 
 ```bash
-yarn add ngx-translate-cut # For Angular 12+
+npm install ngx-translate-cut # For Angular 13. See compatibility table.
 ```
 
-_Note: if you are using **Angular 5 – 11**, use compatibility version: `yarn add ngx-translate-cut@compat`_
+Choose the version corresponding to your Angular version:
 
-3. Add NgxTranslateCutModule into your module `imports`
+| Angular           | ngx-translate-cut | Install                           |
+| ----------------- | ----------------- | --------------------------------- |
+| **13** (ivy only) | 3.x               | `npm install ngx-translate-cut`   |
+| **12** (ivy only) | 2.x               | `npm install ngx-translate-cut@2` |
+| >= 5 < 13         | 1.x               | `npm install ngx-translate-cut@1` |
+
+3. Add `NgxTranslateCutModule` into your module `imports` (usually `app.module.ts` file)
 
 ```typescript
   import { NgxTranslateCutModule } from 'ngx-translate-cut';
@@ -112,7 +118,7 @@ You are probably trying to use this library with an older version of Angular ver
 Install copmatibility version instead:
 
 ```bash
-yarn add ngx-translate-cut@compat # for angular 5 – 11
+yarn add ngx-translate-cut@1 # for angular 5 – 11
 ```
 
 ## Development (notes for me)
@@ -127,7 +133,7 @@ yarn release:patch
 
 ### Publish next channel
 
-1. Bump version `-beta.0` in `package.json`
+1. Bump version `-next.0` in `package.json`
 2. `yarn publish:next`
 
 ## License

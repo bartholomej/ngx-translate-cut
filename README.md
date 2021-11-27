@@ -133,7 +133,7 @@ yarn release:patch
 
 ### Publish next channel
 
-1. Bump version `-beta.0` in `package.json`
+1. Bump version `-next.0` in `package.json`
 2. `yarn publish:next`
 
 ## License
