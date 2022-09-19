@@ -8,7 +8,7 @@
 
 > Angular pipe for cutting translations ✂️ 🌍 (plugin for [@ngx-translate](https://github.com/ngx-translate/core))
 
-> ✓ _Angular 13, Ivy and Angular Universal (SSR) compatible_
+> ✓ _Angular 14, Ivy and Angular Universal (SSR) compatible_
 
 Here's the [demo](http://bartholomej.github.io/ngx-translate-cut/) or [stackblitz live preview](https://stackblitz.com/edit/ngx-translate-cut)
 
@@ -16,21 +16,24 @@ Here's the [demo](http://bartholomej.github.io/ngx-translate-cut/) or [stackblit
 
 1. Make sure you have [@ngx-translate](https://github.com/ngx-translate/core) library installed, because this is its plugin
 
-2. Use yarn (or npm) to install the package
+2. Use `npm` (or `yarn`) to install the package
 
 ```bash
-npm install ngx-translate-cut # For Angular 13. See compatibility table.
+npm install ngx-translate-cut # For Angular 14. See compatibility table
 ```
 
 Choose the version corresponding to your Angular version:
 
-| Angular           | ngx-translate-cut | Install                           |
-| ----------------- | ----------------- | --------------------------------- |
-| **13** (ivy only) | 3.x               | `npm install ngx-translate-cut`   |
-| **12** (ivy only) | 2.x               | `npm install ngx-translate-cut@2` |
-| >= 5 < 13         | 1.x               | `npm install ngx-translate-cut@1` |
+| Angular             | ngx-translate-cut | Install                           |
+| ------------------- | ----------------- | --------------------------------- |
+| **ng14**            | 3.x               | `npm install ngx-translate-cut`   |
+| **ng13**            | 3.x               | `npm install ngx-translate-cut`   |
+| **ng12** (ivy only) | 2.x               | `npm install ngx-translate-cut@2` |
+| >= 5 < 13           | 1.x               | `npm install ngx-translate-cut@1` |
 
-3. Add `NgxTranslateCutModule` into your module `imports` (usually `app.module.ts` file)
+3. Add `NgxTranslateCutModule` into your module `imports`.
+
+File `app.module.ts`
 
 ```typescript
   import { NgxTranslateCutModule } from 'ngx-translate-cut';
@@ -113,7 +116,7 @@ If you are not satisfied with the basic settings of the separator (which is `|`)
 
 #### Solution
 
-You are probably trying to use this library with an older version of Angular version (Angular 5 – 11).
+You are probably trying to use this library with an older version of Angular (Angular 5 – 11).
 
 Install copmatibility version instead:
 
@@ -138,7 +141,7 @@ yarn release:patch
 
 ## License
 
-Copyright &copy; 2021 [Lukas Bartak](http://bartweb.cz)
+Copyright &copy; 2022 [Lukas Bartak](http://bartweb.cz)
 
 Proudly powered by nature 🗻, wind 💨, tea 🍵 and beer 🍺 ;)
 

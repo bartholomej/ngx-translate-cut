@@ -80,11 +80,6 @@
     "tslint-config-prettier": "^1.18.0",
     "typescript": "~4.4.4"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
-  },
   "homepage": "https://github.com/bartholomej/ngx-translate-cut",
   "license": "MIT",
   "repository": {
@@ -103,6 +98,8 @@
     "ngx",
     "translation",
     "i18n",
+    "pipe",
+    "translate",
     "ngx-translate"
   ],
   "files": [
