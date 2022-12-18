@@ -4,8 +4,8 @@
   "description": "Angular pipe for cutting translations (plugin for ngx-translate)",
   "author": "Lukas Bartak <bart@bartweb.cz> (https://github.com/bartholomej)",
   "peerDependencies": {
-    "@angular/common": ">=13 <15",
-    "@angular/core": ">=13 <15",
+    "@angular/common": ">=15 <16",
+    "@angular/core": ">=15 <16",
     "@ngx-translate/core": ">=14 <15"
   },
   "homepage": "https://github.com/bartholomej/ngx-translate-cut",
@@ -27,7 +27,7 @@
     "ngx-translate"
   ],
   "engines": {
-    "node": ">=14"
+    "node": ">=14.20"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"

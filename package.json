@@ -39,9 +39,9 @@
     "@angular/router": "^15.0.4",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
-    "rxjs": "~6.6.7",
+    "rxjs": "~7.8.0",
     "tslib": "^2.3.1",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.12.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.0.4",
@@ -106,7 +106,7 @@
     "dist"
   ],
   "engines": {
-    "node": ">=14"
+    "node": ">=14.20"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
