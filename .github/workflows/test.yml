@@ -37,7 +37,7 @@ jobs:
         run: yarn syncprojects
 
       - name: Build ngx-translate-cut # Build
-        run: yarn build --prod
+        run: yarn build
 
       - name: Build Example # Build Example page
         run: yarn build:demo --base-href https://bartholomej.github.io/ngx-translate-cut/
