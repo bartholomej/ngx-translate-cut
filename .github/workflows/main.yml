@@ -10,15 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@master
-      - name: Use Node.js 14
-        uses: actions/setup-node@master
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 18
           registry-url: 'https://registry.npmjs.org'
 
       - name: Cache node modules
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         env:
           cache-name: cache-node-modules
         with:
@@ -45,7 +45,7 @@ jobs:
         run: yarn test --configuration=ci
 
       - name: Publish NPM
-        run: npm publish --folder dist/ngx-translate-cut
+        run: cd dist/ngx-translate-cut && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
@@ -54,9 +54,9 @@ jobs:
         run: yarn gpr:setup
 
       - name: Use GPR
-        uses: actions/setup-node@master
+        uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 18
           registry-url: https://npm.pkg.github.com/
           scope: '@bartholomej'
 
