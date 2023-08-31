@@ -1,6 +1,7 @@
 {
   "extends": "../../.eslintrc.json",
   "ignorePatterns": ["!**/*"],
+  "plugins": ["@angular-eslint", "@typescript-eslint"],
   "overrides": [
     {
       "files": ["*.ts"],
