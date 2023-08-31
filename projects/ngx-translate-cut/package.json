@@ -27,7 +27,7 @@
     "ngx-translate"
   ],
   "engines": {
-    "node": ">=16"
+    "node": ">=16.14.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
