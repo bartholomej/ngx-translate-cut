@@ -1,6 +1,6 @@
 {
   "name": "ngx-translate-cut",
-  "version": "17.0.0",
+  "version": "18.0.0",
   "description": "Angular pipe for cutting translations (plugin for ngx-translate)",
   "author": "Lukas Bartak <bart@bartweb.cz> (https://github.com/bartholomej)",
   "scripts": {
