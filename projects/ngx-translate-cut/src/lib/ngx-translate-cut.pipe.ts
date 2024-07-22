@@ -12,7 +12,7 @@ export class NgxTranslateCutPipe implements PipeTransform {
     const cutIndex = Number(index);
     const splitted: string[] = value ? value.split(this.options?.separator || SEPARATOR) : null;
     const phrase: string = splitted ? splitted[cutIndex] : null;
-    const result = phrase ? phrase.trim() : '';
+    const result = phrase ? (this.options?.trim ? phrase.trim() : phrase) : '';
 
     return result;
   }
