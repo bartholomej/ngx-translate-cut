@@ -50,4 +50,32 @@ describe('NgxTranslateCutPipe', () => {
     expect(pipe.transform(null, 0))
       .toEqual('');
   });
+
+  describe('Separator', () => {
+    const dataWithCustomSeparator = 'first * second * last';
+
+    it('Should use custom separator', () => {
+      options.separator = '*';
+
+      expect(pipe.transform(dataWithCustomSeparator, 0))
+        .toEqual('first');
+      expect(pipe.transform(dataWithCustomSeparator, 1))
+        .toEqual('second');
+      expect(pipe.transform(dataWithCustomSeparator, 2))
+        .toEqual('last');
+    });
+  });
+
+  describe('Trim', () => {
+    it('Should omit trim', () => {
+      options.trim = false;
+
+      expect(pipe.transform(data, 0))
+        .toEqual('first ');
+      expect(pipe.transform(data, 1))
+        .toEqual(' second ');
+      expect(pipe.transform(data, 2))
+        .toEqual(' last');
+    });
+  });
 });
