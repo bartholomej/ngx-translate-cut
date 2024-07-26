@@ -10,7 +10,7 @@ export const ngxTranslateCutOptionsFactory = (
     if (options.separator) {
       ngxTranslateCutOptionsService.separator = options.separator;
     }
-    if (options.trim) {
+    if (options.trim !== undefined) {
       ngxTranslateCutOptionsService.trim = options.trim;
     }
   }

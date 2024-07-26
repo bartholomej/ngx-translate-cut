@@ -4,6 +4,7 @@ import { NgxTranslateCutOptionsService } from './ngx-translate-cut.options.servi
 
 @Pipe({
   name: 'translateCut',
+  standalone: true,
 })
 export class NgxTranslateCutPipe implements PipeTransform {
   constructor(private options?: NgxTranslateCutOptionsService) {}

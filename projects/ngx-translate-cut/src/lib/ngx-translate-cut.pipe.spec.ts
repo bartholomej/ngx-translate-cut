@@ -1,19 +1,19 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { TestBed } from '@angular/core/testing';
 import { NgxTranslateCutOptionsService } from './ngx-translate-cut.options.service';
 import { NgxTranslateCutPipe } from './ngx-translate-cut.pipe';
 
-// const data: string = [1, 2, 3].map((i) => `text ${i}`).join('|');
 const data = 'first | second | last';
 
 describe('NgxTranslateCutPipe', () => {
   let pipe: NgxTranslateCutPipe;
+  let options: NgxTranslateCutOptionsService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [NgxTranslateCutOptionsService]
+      imports: [NgxTranslateCutPipe],
+      providers: [NgxTranslateCutOptionsService],
     });
-    const options = TestBed.get(NgxTranslateCutOptionsService);
+    options = TestBed.inject(NgxTranslateCutOptionsService);
     pipe = new NgxTranslateCutPipe(options);
   });
 
@@ -49,5 +49,33 @@ describe('NgxTranslateCutPipe', () => {
 
     expect(pipe.transform(null, 0))
       .toEqual('');
+  });
+
+  describe('Separator', () => {
+    const dataWithCustomSeparator = 'first * second * last';
+
+    it('Should use custom separator', () => {
+      options.separator = '*';
+
+      expect(pipe.transform(dataWithCustomSeparator, 0))
+        .toEqual('first');
+      expect(pipe.transform(dataWithCustomSeparator, 1))
+        .toEqual('second');
+      expect(pipe.transform(dataWithCustomSeparator, 2))
+        .toEqual('last');
+    });
+  });
+
+  describe('Trim', () => {
+    it('Should omit trim', () => {
+      options.trim = false;
+
+      expect(pipe.transform(data, 0))
+        .toEqual('first ');
+      expect(pipe.transform(data, 1))
+        .toEqual(' second ');
+      expect(pipe.transform(data, 2))
+        .toEqual(' last');
+    });
   });
 });
