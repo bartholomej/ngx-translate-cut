@@ -1,19 +1,19 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { TestBed } from '@angular/core/testing';
 import { NgxTranslateCutOptionsService } from './ngx-translate-cut.options.service';
 import { NgxTranslateCutPipe } from './ngx-translate-cut.pipe';
 
-// const data: string = [1, 2, 3].map((i) => `text ${i}`).join('|');
 const data = 'first | second | last';
 
 describe('NgxTranslateCutPipe', () => {
   let pipe: NgxTranslateCutPipe;
+  let options: NgxTranslateCutOptionsService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [NgxTranslateCutOptionsService]
+      imports: [NgxTranslateCutPipe],
+      providers: [NgxTranslateCutOptionsService],
     });
-    const options = TestBed.get(NgxTranslateCutOptionsService);
+    options = TestBed.inject(NgxTranslateCutOptionsService);
     pipe = new NgxTranslateCutPipe(options);
   });
 
