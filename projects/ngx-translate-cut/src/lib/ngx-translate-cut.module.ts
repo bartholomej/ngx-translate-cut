@@ -5,17 +5,16 @@ import { NgxTranslateCutOptionsService } from './ngx-translate-cut.options.servi
 import { NgxTranslateCutPipe } from './ngx-translate-cut.pipe';
 
 export let FOR_ROOT_OPTIONS_TOKEN = new InjectionToken<NgxTranslateCutOptions>(
-  'forRoot() NgxTranslateCutOptionsService configuration.'
+  'forRoot() NgxTranslateCutOptionsService configuration.',
 );
 
 @NgModule({
-  declarations: [NgxTranslateCutPipe],
+  imports: [NgxTranslateCutPipe],
   exports: [NgxTranslateCutPipe],
-  providers: [NgxTranslateCutOptionsService],
 })
 export class NgxTranslateCutModule {
   public static forRoot(
-    options?: NgxTranslateCutOptions
+    options?: NgxTranslateCutOptions,
   ): ModuleWithProviders<NgxTranslateCutModule> {
     return {
       ngModule: NgxTranslateCutModule,
