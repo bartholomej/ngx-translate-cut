@@ -86,6 +86,8 @@ In your template use `translateCut:<number>` pipe right after `translate` pipe f
 
 ## Options
 
+### Separator
+
 If you are not satisfied with the basic settings of the separator (which is `|`), you can choose your own separator
 
 ```typescript
@@ -98,6 +100,24 @@ If you are not satisfied with the basic settings of the separator (which is `|`)
      NgxTranslateCutModule.forRoot({
       // Your separator in translation strings will be `*`
       separator: '*'
+    }),
+   ]
+  })
+```
+
+### Trim
+
+If you do not want to trim your translation strings before cutting you can set `trim` to `false` (default is `true`). See this [explanation](https://github.com/bartholomej/ngx-translate-cut/issues/62)...
+
+```typescript
+  import { NgxTranslateCutModule } from 'ngx-translate-cut';
+
+  @NgModule({
+   // ...
+   imports: [
+     // ...
+     NgxTranslateCutModule.forRoot({
+      trim: false
     }),
    ]
   })
