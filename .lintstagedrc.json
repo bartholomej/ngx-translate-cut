@@ -1,6 +1,6 @@
 {
-  "**/*.{ts}": [
-    "eslint --cache --fix",
+  "**/*.ts": [
+    "eslint --fix",
     "prettier --write"
   ]
 }
