@@ -45,8 +45,12 @@ jobs:
       - name: Run tests # Build Schematics and move
         run: yarn test --configuration=ci --code-coverage
 
-      - name: Upload coverage reports
-        run: bash <(curl -s https://codecov.io/bash)
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          fail_ci_if_error: true
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Deploy Github Pages
         uses: peaceiris/actions-gh-pages@v4
