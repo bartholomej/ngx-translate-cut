@@ -55,6 +55,7 @@
     "@angular/cli": "^19.0.2",
     "@angular/compiler-cli": "^19.0.1",
     "@angular/language-service": "^19.0.1",
+    "@babel/helper-environment-visitor": "^7.24.7",
     "@types/fs-extra": "^11.0.4",
     "@types/jasmine": "~5.1.4",
     "@types/jasminewd2": "~2.0.13",
