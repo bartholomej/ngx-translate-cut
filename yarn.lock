@@ -2276,17 +2276,17 @@
   resolved "http://verdaccio.creditczech.cz:4873/@ngtools%2fwebpack/-/webpack-20.0.0.tgz#1125f394ae2b01fdbc23d10cc4f110112911d412"
   integrity sha512-3kT8PlLDvThhZxNbJWdG2qrZrUOg0tAjd7mnsOsg65/2tsBZ2HaR3fSzkHOG+Ly6SlWiS4owKWqPRGlgFuq1bw==
 
-"@ngx-translate/core@^16.0.3":
-  version "16.0.3"
-  resolved "https://registry.yarnpkg.com/@ngx-translate/core/-/core-16.0.3.tgz#e98a96ff05963ea65d548516820c96a2a743b390"
-  integrity sha512-UPse66z9tRUmIpeorYodXBQY6O4foUmj9jy9cCuuja7lqdOwRBWPzCWqc+qYIXv5L2QoqZdxgHtqoUz+Q9weSA==
+"@ngx-translate/core@^16.0.4":
+  version "16.0.4"
+  resolved "http://verdaccio.creditczech.cz:4873/@ngx-translate%2fcore/-/core-16.0.4.tgz#8e17d6ed6b306803ed2eb19ab72a0fdb697f1d76"
+  integrity sha512-s8llTL2SJvROhqttxvEs7Cg+6qSf4kvZPFYO+cTOY1d8DWTjlutRkWAleZcPPoeX927Dm7ALfL07G7oYDJ7z6w==
   dependencies:
     tslib "^2.3.0"
 
-"@ngx-translate/http-loader@^16.0.0":
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/@ngx-translate/http-loader/-/http-loader-16.0.0.tgz#d1f91a1824f6440be468a496832fe50f58151356"
-  integrity sha512-l3okOHGVxZ1Bm55OpakSfXvI2yYmVmhYqgwGU4aIQIRUqpkBCrSDZnmrHTcZfsGJzXKB5E2D2rko9i28gBijmA==
+"@ngx-translate/http-loader@^16.0.1":
+  version "16.0.1"
+  resolved "http://verdaccio.creditczech.cz:4873/@ngx-translate%2fhttp-loader/-/http-loader-16.0.1.tgz#01219d623ea810fd36ba2911d1452975cd32a041"
+  integrity sha512-xJEOUpvs6Zfc8G4cmQmegFOEpfYSoplTHHoisPNrATXjRBjpaKsBaPOXlZsuFUW2XV00s16gIyI4+9z1XkO5bw==
   dependencies:
     tslib "^2.3.0"
 
