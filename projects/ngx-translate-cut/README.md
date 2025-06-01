@@ -19,7 +19,7 @@ Here's the [demo](http://bartholomej.github.io/ngx-translate-cut/) or [stackblit
 2. Use `npm` (or `yarn`) to install the package
 
 ```bash
-npm install ngx-translate-cut # For Angular 19. See compatibility table
+npm install ngx-translate-cut
 ```
 
 Choose the version corresponding to your Angular version:
