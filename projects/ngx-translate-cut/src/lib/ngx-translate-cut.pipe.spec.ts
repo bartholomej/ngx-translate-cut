@@ -1,3 +1,4 @@
+import { provideZonelessChangeDetection } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { NgxTranslateCutOptionsService } from './ngx-translate-cut.options.service';
 import { NgxTranslateCutPipe } from './ngx-translate-cut.pipe';
@@ -11,7 +12,7 @@ describe('NgxTranslateCutPipe', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [NgxTranslateCutPipe],
-      providers: [NgxTranslateCutOptionsService],
+      providers: [NgxTranslateCutOptionsService, provideZonelessChangeDetection()],
     });
     options = TestBed.inject(NgxTranslateCutOptionsService);
     pipe = new NgxTranslateCutPipe(options);

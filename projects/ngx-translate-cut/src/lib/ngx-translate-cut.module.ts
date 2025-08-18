@@ -1,16 +1,22 @@
-import { InjectionToken, ModuleWithProviders, NgModule } from '@angular/core';
+import {
+  InjectionToken,
+  ModuleWithProviders,
+  NgModule,
+  provideZonelessChangeDetection,
+} from '@angular/core';
 import { ngxTranslateCutOptionsFactory } from './ngx-translate-cut.options.factory';
 import { NgxTranslateCutOptions } from './ngx-translate-cut.options.interface';
 import { NgxTranslateCutOptionsService } from './ngx-translate-cut.options.service';
 import { NgxTranslateCutPipe } from './ngx-translate-cut.pipe';
 
-export let FOR_ROOT_OPTIONS_TOKEN = new InjectionToken<NgxTranslateCutOptions>(
+export const FOR_ROOT_OPTIONS_TOKEN = new InjectionToken<NgxTranslateCutOptions>(
   'forRoot() NgxTranslateCutOptionsService configuration.',
 );
 
 @NgModule({
   imports: [NgxTranslateCutPipe],
   exports: [NgxTranslateCutPipe],
+  providers: [provideZonelessChangeDetection()],
 })
 export class NgxTranslateCutModule {
   public static forRoot(
