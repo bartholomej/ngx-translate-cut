@@ -6,7 +6,7 @@
   "peerDependencies": {
     "@angular/common": ">=18 <19",
     "@angular/core": ">=18 <19",
-    "@ngx-translate/core": ">=15 <16"
+    "@ngx-translate/core": ">=15"
   },
   "homepage": "https://github.com/bartholomej/ngx-translate-cut",
   "license": "MIT",
