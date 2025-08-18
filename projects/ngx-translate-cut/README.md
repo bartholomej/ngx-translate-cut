@@ -8,7 +8,7 @@
 
 > Angular pipe for cutting translations ✂️ 🌍 (plugin for [@ngx-translate](https://github.com/ngx-translate/core))
 
-> ✓ _Angular 20, Angular Universal (SSR) and Zoneless compatible_
+> ✓ _Angular 20, Angular Universal (SSR), Standalone, Signals and Zoneless compatible_
 
 Here's the [demo](http://bartholomej.github.io/ngx-translate-cut/) or [stackblitz live preview](https://stackblitz.com/edit/ngx-translate-cut)
 
@@ -169,7 +169,7 @@ yarn release:patch
 
 Copyright &copy; 2025 [Lukas Bartak](http://bartweb.cz)
 
-Proudly powered by nature 🗻, wind 💨, tea 🍵 and beer 🍺 ;)
+Proudly powered by nature 🗻, wind 💨, films 🎥, books 📖, tea 🍵, chili 🌶 ️and beer 🍺 ;)
 
 All contents are licensed under the [MIT license].
 
