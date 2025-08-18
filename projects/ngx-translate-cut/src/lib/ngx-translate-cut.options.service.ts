@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { SEPARATOR } from './ngx-translate-cut.constants';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class NgxTranslateCutOptionsService {
   /**
    * @returns separator – can be custom or predefined
@@ -12,5 +10,5 @@ export class NgxTranslateCutOptionsService {
   /**
    * @returns trim – trim or not to trim, that is the question
    */
-  public trim: boolean = true;
+  public trim = true;
 }

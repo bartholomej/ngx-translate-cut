@@ -11,11 +11,15 @@ describe('NgxTranslateCutPipe', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [NgxTranslateCutPipe],
-      providers: [NgxTranslateCutOptionsService, provideZonelessChangeDetection()],
+      imports: [],
+      providers: [
+        NgxTranslateCutPipe, // Provide the standalone pipe explicitly
+        NgxTranslateCutOptionsService,
+        provideZonelessChangeDetection(),
+      ],
     });
     options = TestBed.inject(NgxTranslateCutOptionsService);
-    pipe = new NgxTranslateCutPipe(options);
+    pipe = TestBed.inject(NgxTranslateCutPipe);
   });
 
   it('First', () => {

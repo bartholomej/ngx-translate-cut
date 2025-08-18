@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { inject, Pipe, PipeTransform } from '@angular/core';
 import { SEPARATOR } from './ngx-translate-cut.constants';
 import { NgxTranslateCutOptionsService } from './ngx-translate-cut.options.service';
 
@@ -7,7 +7,7 @@ import { NgxTranslateCutOptionsService } from './ngx-translate-cut.options.servi
   standalone: true,
 })
 export class NgxTranslateCutPipe implements PipeTransform {
-  constructor(private options?: NgxTranslateCutOptionsService) {}
+  private readonly options = inject(NgxTranslateCutOptionsService);
 
   public transform(value: string, index: number): string {
     const cutIndex = Number(index);
