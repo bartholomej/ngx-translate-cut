@@ -29,7 +29,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@angular/animations": "^20.1.7",
+    "@angular/animations": "^20.2.1",
     "@angular/common": "^20.1.7",
     "@angular/compiler": "^20.1.7",
     "@angular/core": "^20.1.7",
