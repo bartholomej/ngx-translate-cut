@@ -1,9 +1,9 @@
 /**
  * Sync versions between root package.json a npm repository package.json
  */
-import { copyFileSync, writeFileSync } from 'fs-extra';
+import { copyFileSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
-import {
+import pkg, {
   author,
   bugs,
   description,
@@ -16,10 +16,7 @@ import {
   repository,
   version,
 } from '../package.json';
-import { PackageJson } from './package.json.interface';
-
 const packagePath = resolve(__dirname, '..', 'projects', 'ngx-translate-cut', 'package.json');
-const pkg: PackageJson = require(packagePath);
 
 pkg.name = name;
 pkg.version = version;

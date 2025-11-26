@@ -1,4 +1,4 @@
-import { writeFileSync } from 'fs-extra';
+import { writeFileSync } from 'fs';
 import { join } from 'path';
 import distPackage from '../dist/ngx-translate-cut/package.json';
 
@@ -11,6 +11,6 @@ pkg.publishConfig.registry = 'https://npm.pkg.github.com';
 
 writeFileSync(
   join(__dirname, '..', 'dist', 'ngx-translate-cut', 'package.json'),
-  JSON.stringify(pkg, null, 2)
+  JSON.stringify(pkg, null, 2),
 );
 console.log('File package.json modified:', pkg);
