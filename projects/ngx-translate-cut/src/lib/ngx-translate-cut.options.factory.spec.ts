@@ -1,3 +1,4 @@
+import { beforeEach, describe, expect, it } from 'vitest';
 import { SEPARATOR } from './ngx-translate-cut.constants';
 import { ngxTranslateCutOptionsFactory } from './ngx-translate-cut.options.factory';
 import { NgxTranslateCutOptions } from './ngx-translate-cut.options.interface';
