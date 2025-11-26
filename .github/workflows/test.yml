@@ -43,7 +43,7 @@ jobs:
         run: yarn build:demo --base-href https://bartholomej.github.io/ngx-translate-cut/
 
       - name: Run tests # Build Schematics and move
-        run: yarn test --configuration=ci --code-coverage
+        run: yarn test --watch=false --coverage
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
