@@ -42,8 +42,7 @@
     "angular-eslint": "^21.0.1",
     "rxjs": "~7.8.1",
     "tslib": "^2.6.3",
-    "typescript-eslint": "^8.46.2",
-    "zone.js": "~0.15.0"
+    "typescript-eslint": "^8.46.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^21.0.1",
