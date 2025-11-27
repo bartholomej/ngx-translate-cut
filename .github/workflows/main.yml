@@ -42,7 +42,7 @@ jobs:
         run: yarn build
 
       - name: Run tests
-        run: yarn test --configuration=ci
+        run: yarn test --watch=false
 
       - name: Publish NPM
         run: cd dist/ngx-translate-cut && npm publish
