@@ -3,7 +3,7 @@
  */
 import { copyFileSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
-import pkg, {
+import {
   author,
   bugs,
   description,
@@ -16,6 +16,8 @@ import pkg, {
   repository,
   version,
 } from '../package.json';
+import pkg from '../projects/ngx-translate-cut/package.json';
+
 const packagePath = resolve(__dirname, '..', 'projects', 'ngx-translate-cut', 'package.json');
 
 pkg.name = name;
