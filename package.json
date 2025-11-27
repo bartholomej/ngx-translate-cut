@@ -71,7 +71,6 @@
     "lint-staged": "^16.2.6",
     "ng-packagr": "^21.0.0",
     "prettier": "^3.6.2",
-    "protractor": "~7.0.0",
     "tslint-config-prettier": "^1.18.0",
     "tsx": "~4.20.6",
     "typescript": "5.9.3",
