@@ -50,15 +50,13 @@ jobs:
 
       - name: Publish NPM
         run: cd dist/ngx-translate-cut && npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
       # Publish to GitHub Package Registry
       - name: Set up package for GPR
         run: yarn gpr:setup
 
       - name: Use GPR
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 24
           registry-url: https://npm.pkg.github.com/
@@ -68,6 +66,8 @@ jobs:
         run: |
           cd dist/ngx-translate-cut
           npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{github.token}}
 
       - name: Deploy Github Pages
         uses: peaceiris/actions-gh-pages@v4
