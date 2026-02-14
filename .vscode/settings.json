@@ -11,5 +11,10 @@
   "[javascript]": {
     "editor.formatOnSave": false
   },
-  "prettier.disableLanguages": ["html"]
+  "prettier.disableLanguages": [
+    "html"
+  ],
+  "i18n-ally.localesPaths": [
+    "projects/demo/src/assets/i18n"
+  ]
 }
