@@ -102,7 +102,7 @@
     "dist"
   ],
   "engines": {
-    "node": ">=20.11.1"
+    "node": ">=22"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
