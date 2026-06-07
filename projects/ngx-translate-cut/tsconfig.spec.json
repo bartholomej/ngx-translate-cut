@@ -1,11 +1,17 @@
 {
   "extends": "../../tsconfig.json",
   "angularCompilerOptions": {
-    "enableIvy": true
+    "enableIvy": true,
+    "extendedDiagnostics": {
+      "checks": {
+        "nullishCoalescingNotNullable": "suppress",
+        "optionalChainNotNullable": "suppress"
+      }
+    }
   },
   "compilerOptions": {
     "outDir": "../../out-tsc/spec",
     "types": ["node"]
-  },  
+  },
   "include": ["**/*.spec.ts", "**/*.d.ts"]
 }
