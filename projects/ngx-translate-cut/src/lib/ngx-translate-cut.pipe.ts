@@ -9,7 +9,7 @@ import { NgxTranslateCutOptionsService } from './ngx-translate-cut.options.servi
 export class NgxTranslateCutPipe implements PipeTransform {
   private readonly options = inject(NgxTranslateCutOptionsService);
 
-  public transform(value: string, index: number): string {
+  public transform(value: string | undefined | null, index: number): string {
     const cutIndex = Number(index);
     const splitted: string[] | null = value
       ? value.split(this.options?.separator || SEPARATOR)

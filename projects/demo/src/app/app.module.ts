@@ -3,7 +3,7 @@ import { NgModule, provideZonelessChangeDetection } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
-import { NgxTranslateCutModule } from 'projects/ngx-translate-cut/src/lib/ngx-translate-cut.module';
+import { NgxTranslateCutModule } from './../../../../projects/ngx-translate-cut/src/lib/ngx-translate-cut.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
