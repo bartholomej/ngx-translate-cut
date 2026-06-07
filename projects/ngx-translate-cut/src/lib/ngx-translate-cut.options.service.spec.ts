@@ -1,19 +1,30 @@
 import { provideZonelessChangeDetection } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import { beforeEach, describe, expect, it } from 'vitest';
-import { NgxTranslateCutOptionsService } from './ngx-translate-cut.options.service';
+import { describe, expect, it } from 'vitest';
+import { NgxTranslateCutOptionsService, provideNgxTranslateCut } from './ngx-translate-cut.options.service';
 
 describe('NgxTranslateCutOptionsService', () => {
-  let service: NgxTranslateCutOptionsService;
-
-  beforeEach(() => {
+  it('should be created with default options', () => {
     TestBed.configureTestingModule({
-      providers: [NgxTranslateCutOptionsService, provideZonelessChangeDetection()]
+      providers: [provideZonelessChangeDetection()]
     });
-    service = TestBed.inject(NgxTranslateCutOptionsService);
+    const service = TestBed.inject(NgxTranslateCutOptionsService);
+    expect(service).toBeTruthy();
+    expect(service.separator).toEqual('|');
+    expect(service.trim).toEqual(true);
   });
 
-  it('should be created', () => {
+  it('should support provideNgxTranslateCut custom options', () => {
+    TestBed.configureTestingModule({
+      providers: [
+        provideNgxTranslateCut({ separator: '*', trim: false }),
+        provideZonelessChangeDetection()
+      ]
+    });
+    const service = TestBed.inject(NgxTranslateCutOptionsService);
     expect(service).toBeTruthy();
+    expect(service.separator).toEqual('*');
+    expect(service.trim).toEqual(false);
   });
 });
+
