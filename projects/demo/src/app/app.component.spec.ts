@@ -5,13 +5,12 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import { NgxTranslateCutOptionsService } from './../../../../projects/ngx-translate-cut/src/lib/ngx-translate-cut.options.service';
 import { NgxTranslateCutModule } from './../../../../projects/ngx-translate-cut/src/public-api';
 import { AppComponent } from './app.component';
-import { AppModule } from './app.module';
 
 describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [NgxTranslateCutOptionsService, provideZonelessChangeDetection()],
-      imports: [TranslateModule.forRoot(), NgxTranslateCutModule, AppModule],
+      imports: [TranslateModule.forRoot(), NgxTranslateCutModule, AppComponent],
     }).compileComponents();
   });
 

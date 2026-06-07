@@ -1,13 +1,32 @@
-import { enableProdMode } from '@angular/core';
+import { enableProdMode, importProvidersFrom, provideZonelessChangeDetection } from '@angular/core';
 
-import { platformBrowser } from '@angular/platform-browser';
-import { AppModule } from './app/app.module';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
+import { TranslateModule } from '@ngx-translate/core';
+import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
+import { NgxTranslateCutModule } from '../../ngx-translate-cut/src/lib/ngx-translate-cut.module';
+import { AppComponent } from './app/app.component';
 import { environment } from './environments/environment';
 
 if (environment.production) {
   enableProdMode();
 }
 
-platformBrowser()
-  .bootstrapModule(AppModule)
-  .catch((err) => console.error(err));
+bootstrapApplication(AppComponent, {
+  providers: [
+    importProvidersFrom(
+      TranslateModule.forRoot({
+        loader: provideTranslateHttpLoader({ prefix: './assets/i18n/', suffix: '.json' }),
+      }),
+      BrowserModule,
+      NgxTranslateCutModule.forRoot({
+        // Pipe `|` is default option. It's just for show and play :)
+        // If you don't need to change the separator, you don't have to use it at all.
+        // Just import module. Without any `forRoot` methods.
+        separator: '|',
+      }),
+    ),
+    provideHttpClient(withInterceptorsFromDi()),
+    provideZonelessChangeDetection(),
+  ],
+}).catch((err) => console.error(err));
