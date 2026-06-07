@@ -1,4 +1,4 @@
-name: Build & Publish
+name: 🚀 Publish to NPM
 
 on:
   push:
@@ -12,71 +12,54 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
+    name: 🚀 Publish to NPM
 
     steps:
-      - uses: actions/checkout@v6
-      - name: Use Node.js
+      - name: 📥 Checkout code
+        uses: actions/checkout@v6
+
+      - name: 📦 Enable Corepack
+        run: corepack enable
+
+      - name: 🔧 Use Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version: 26
           registry-url: 'https://registry.npmjs.org'
+          cache: 'yarn'
 
-      - name: Cache node modules
-        uses: actions/cache@v5
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: ~/.npm # npm cache files are stored in `~/.npm` on Linux/macOS
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+      - name: 📦 Install dependencies
+        # Use immutable install on CI to prevent accidental lockfile changes
+        run: yarn install --immutable
 
-      - name: Install dependencies # Install all deps
-        run: yarn
-
-      - name: Sync versions # Sync versions
+      - name: 🔄 Sync versions
         run: yarn syncprojects
 
-      - name: Build demo app # Build Schematics and move
+      - name: 🏗️ Build demo app
         run: yarn build:demo --base-href https://bartholomej.github.io/ngx-translate-cut/
 
-      - name: Build ngx-translate-cut # Build
+      - name: 🏗️ Build library
         run: yarn build
 
-      - name: Run tests
+      - name: 🧪 Run tests
         run: yarn test --watch=false --coverage
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v5
+      - name: 📊 Upload coverage to Codecov
+        uses: codecov/codecov-action@v6
         with:
+          token: ${{ secrets.CODECOV_TOKEN }}
           fail_ci_if_error: true
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
-      - name: Publish NPM
-        run: cd dist/ngx-translate-cut && npm publish
+      - name: 🚀 Publish NPM
+        if: startsWith(github.ref, 'refs/tags/v') && contains(github.ref, 'next') == false
+        run: cd dist/ngx-translate-cut && npm publish --access public
 
-      # Publish to GitHub Package Registry
-      # - name: Set up package for GPR
-      #   run: yarn gpr:setup
+      - name: 🚀 Publish NPM (NEXT)
+        if: startsWith(github.ref, 'refs/tags/v') && contains(github.ref, 'next') == true
+        run: cd dist/ngx-translate-cut && npm publish --access public --tag next
 
-      # - name: Use GPR
-      #   uses: actions/setup-node@v5
-      #   with:
-      #     node-version: 24
-      #     registry-url: https://npm.pkg.github.com/
-      #     scope: '@bartholomej'
-
-      # - name: Publish to GitHub Package Registry
-      #   run: |
-      #     cd dist/ngx-translate-cut
-      #     npm publish
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{github.token}}
-
-      - name: Deploy Github Pages
+      - name: 🚀 Deploy Github Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
