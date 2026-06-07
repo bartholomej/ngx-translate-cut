@@ -8,7 +8,7 @@
 
 > Angular pipe for cutting translations ✂️ 🌍 (plugin for [@ngx-translate](https://github.com/ngx-translate/core))
 
-> ✓ _Angular 21, Angular Universal (SSR), Standalone, Signals and Zoneless compatible_
+> ✓ _Angular 22, Angular Universal (SSR), Standalone, Signals and Zoneless compatible_
 
 Here's the [demo](http://bartholomej.github.io/ngx-translate-cut/) or [stackblitz live preview](https://stackblitz.com/edit/ngx-translate-cut)
 
@@ -26,7 +26,8 @@ Choose the version corresponding to your Angular version:
 
 | Angular             | ngx-translate-cut | Install                            |
 | ------------------- | ----------------- | ---------------------------------- |
-| **ng21**            | 21.x              | `npm install ngx-translate-cut`    |
+| **ng22**            | 22.x              | `npm install ngx-translate-cut`    |
+| **ng21**            | 21.x              | `npm install ngx-translate-cut@21` |
 | **ng20**            | 20.x              | `npm install ngx-translate-cut@20` |
 | **ng19**            | 19.x              | `npm install ngx-translate-cut@19` |
 | **ng18**            | 18.x              | `npm install ngx-translate-cut@18` |
@@ -38,20 +39,38 @@ Choose the version corresponding to your Angular version:
 | **ng12** (ivy only) | 2.x               | `npm install ngx-translate-cut@2`  |
 | >= 5 =< 12          | 1.x               | `npm install ngx-translate-cut@1`  |
 
-3. Add `NgxTranslateCutModule` into your module `imports`.
+3. Import the pipe or module in your project.
+
+### Standalone (Angular 14+, Recommended)
+
+Just import `NgxTranslateCutPipe` in your component's `imports` array:
+
+```typescript
+import { NgxTranslateCutPipe } from 'ngx-translate-cut';
+
+@Component({
+  // ...
+  imports: [NgxTranslateCutPipe]
+})
+export class MyComponent {}
+```
+
+### Module-based (Classic)
+
+Add `NgxTranslateCutModule` into your module `imports`.
 
 File `app.module.ts`
 
 ```typescript
-  import { NgxTranslateCutModule } from 'ngx-translate-cut';
+import { NgxTranslateCutModule } from 'ngx-translate-cut';
 
-  @NgModule({
+@NgModule({
+ // ...
+ imports: [
    // ...
-   imports: [
-     // ...
-     NgxTranslateCutModule
-   ]
-  })
+   NgxTranslateCutModule
+ ]
+})
 ```
 
 ## Usage
@@ -89,41 +108,68 @@ In your template use `translateCut:<number>` pipe right after `translate` pipe f
 
 ## Options
 
-### Separator
+### Global Configuration
 
-If you are not satisfied with the basic settings of the separator (which is `|`), you can choose your own separator
+#### Standalone (Angular 14+)
+
+Configure options globally in your `main.ts` using `provideNgxTranslateCut`:
 
 ```typescript
-  import { NgxTranslateCutModule } from 'ngx-translate-cut';
+import { provideNgxTranslateCut } from 'ngx-translate-cut';
 
-  @NgModule({
-   // ...
-   imports: [
-     // ...
-     NgxTranslateCutModule.forRoot({
-      // Your separator in translation strings will be `*`
-      separator: '*'
-    }),
-   ]
-  })
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideNgxTranslateCut({
+      separator: '*',
+      trim: false // default is true
+    })
+  ]
+});
 ```
 
-### Trim
+#### Module-based (Classic)
 
-If you do not want to trim your translation strings before cutting you can set `trim` to `false` (default is `true`). See this [explanation](https://github.com/bartholomej/ngx-translate-cut/issues/62)...
+Configure options via `NgxTranslateCutModule.forRoot()`:
 
 ```typescript
-  import { NgxTranslateCutModule } from 'ngx-translate-cut';
+import { NgxTranslateCutModule } from 'ngx-translate-cut';
 
-  @NgModule({
+@NgModule({
+ // ...
+ imports: [
    // ...
-   imports: [
-     // ...
-     NgxTranslateCutModule.forRoot({
-      trim: false
-    }),
-   ]
-  })
+   NgxTranslateCutModule.forRoot({
+     separator: '*',
+     trim: false // default is true
+   }),
+ ]
+})
+```
+
+### Component-level Overrides
+
+You can also override options at the component level using Angular's hierarchical DI:
+
+```typescript
+import { Component } from '@angular/core';
+import { 
+  NgxTranslateCutPipe, 
+  NGX_TRANSLATE_CUT_OPTIONS, 
+  NgxTranslateCutOptionsService 
+} from 'ngx-translate-cut';
+
+@Component({
+  selector: 'app-special-component',
+  imports: [NgxTranslateCutPipe],
+  providers: [
+    {
+      provide: NGX_TRANSLATE_CUT_OPTIONS,
+      useValue: { separator: '*' }
+    },
+    NgxTranslateCutOptionsService
+  ]
+})
+export class SpecialComponent {}
 ```
 
 ## Dependencies
@@ -145,7 +191,7 @@ If you do not want to trim your translation strings before cutting you can set `
 
 You are probably trying to use this library with an older version of Angular (Angular 5 – 11).
 
-Install copmatibility version instead:
+Install compatibility version instead:
 
 ```bash
 yarn add ngx-translate-cut@1 # for angular 5 – 11
